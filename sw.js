@@ -3,7 +3,7 @@ importScripts("js/sw-utils.js");
 
 // Diferentes tipos de cache a utilizar
 const STATIC_CACHE = "static-v2";
-const DYNAMIC_CACHE = "dynamic-v1";
+const DYNAMIC_CACHE = "dynamic-v2";
 //assets que nunca cambiaran
 const INMUTABLE_CACHE = "inmutable-v1";
 
@@ -47,9 +47,15 @@ self.addEventListener("activate", event => {
   //comparamos diferencias entre el cache existente
   const respuesta = caches.keys().then(keys => {
     keys.forEach(key => {
+      
       if (key !== STATIC_CACHE && key.includes("static")) {
         return caches.delete(key);
       }
+
+      if (key !== DYNAMIC_CACHE && key.includes("dynamic")) {
+        return caches.delete(key);
+      }
+
     });
   });
   event.waitUntil(respuesta);
