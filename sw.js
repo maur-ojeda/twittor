@@ -2,7 +2,7 @@
 importScripts("js/sw-utils.js");
 
 // Diferentes tipos de cache a utilizar
-const STATIC_CACHE = "static-v1";
+const STATIC_CACHE = "static-v2";
 const DYNAMIC_CACHE = "dynamic-v1";
 //assets que nunca cambiaran
 const INMUTABLE_CACHE = "inmutable-v1";
