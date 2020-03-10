@@ -11,7 +11,16 @@
     font-size: 16px;
     background-color: #dde1e2; 
     width: 100%;
-}
+    /* diasable pull android*/
+    overscroll-behavior-y: contain;
+
+
+    /*fix ios*/
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
 
 /* Personalizados */
 .oculto {
